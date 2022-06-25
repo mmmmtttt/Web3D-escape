@@ -1,0 +1,10 @@
+<div class="card" [style.background-image]="'url(../../../../../assets/room_information/' + room.id+ '.jpg)'">
+    <div class="card-content">
+        <h2 class="card-title">{{room.name}}</h2>
+        <p class="card-intro">{{room.intro}}</p>
+        <div>
+            <a [routerLink]="['../game' , room.id]" class="button" *ngIf="!room.locked">Enter</a>
+            <i class="fa-solid fa-lock" *ngIf="room.locked"> Coming soon </i>
+        </div>
+    </div>
+</div>

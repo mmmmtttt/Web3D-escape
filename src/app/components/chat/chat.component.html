@@ -1,0 +1,34 @@
+<!-- (click)="closeBox(chatbox, btn, overlay)" -->
+<div class="container">
+  <div class="chatbox">
+    <!-- [ngClass]="hideChatBox?'hide':'show'" -->
+    <div #chatbox class="chatbox__all">
+      <!-- <div class="chatbox__header">
+        <button class="chatbox__image--header"><i class="fa-solid fa-comments"></i></button>
+        <div class="chatbox__content--header">
+          <h5>CHAT ROOM</h5>
+          <h6>online</h6>
+        </div>
+      </div> -->
+
+      <div class="chatbox__messages">
+        <div class="messages__item" *ngFor="let msg of messageList" [ngClass]="msg['type']">
+          <div class="message">{{ msg.message }}</div>
+          <p class="name">{{ msg.username }}</p>
+        </div>
+      </div>
+
+      <div class="chatbox__footer">
+        <input type="text" placeholder="Enter Message..." [(ngModel)]="message"
+        (keyup)="($event.which === 13)?sendMessage():0"> 
+        <!-- keyup监听是否有回车 -->
+        <button (click)="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <!-- button -->
+    <!-- (click)="hideChatBox=!hideChatBox" -->
+    <!-- <div class="chatbox__button">
+      <button #btn (click)="showBox(chatbox, btn,overlay)"><i class="fa-solid fa-paper-plane"></i></button>
+    </div> -->
+  </div>
+</div>

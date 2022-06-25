@@ -1,0 +1,6 @@
+<ngx-ui-loader [loaderId]="'gameloader'" [text]="gameIntroduction"></ngx-ui-loader>
+<ngx-ui-loader></ngx-ui-loader>
+<div [@routeAnimations]="prepareRoute(outlet)" (@routeAnimations.start)="start$.next($event)"
+    (@routeAnimations.done)="done$.next($event)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>

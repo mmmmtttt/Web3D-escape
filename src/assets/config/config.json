@@ -1,0 +1,6 @@
+{
+    "apiBaseUrl": "http://121.4.80.83:8282",
+    "apiChatUrl": "http://121.4.80.83:8181",
+    "apiBotUrl":"http://121.4.80.83:8383",
+    "modelNum": 8
+}

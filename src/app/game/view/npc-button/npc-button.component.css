@@ -1,0 +1,22 @@
+#container{
+  position: relative;
+}
+
+img {
+  position: absolute;
+  width: auto;
+  height: 100px;
+}
+
+svg{
+  position: absolute;
+  width: 350px;
+  top: -20px;
+  left: -10px;
+}
+
+text{
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  fill: rgba(255,255,255,0.5);
+}

@@ -1,0 +1,15 @@
+<div id="container">
+	<!-- (click)="trigger.disable(false)" -->
+	<app-tool-bar></app-tool-bar>
+	<div class="gallery" #gallery>
+		<app-background-star></app-background-star>
+		<ul class="cards">
+			<li *ngFor="let roomInfo of rooms" #card>
+				<app-room-card [room]="roomInfo"></app-room-card>
+			</li>
+			<!-- <app-room-card *ngFor="let roomInfo of rooms" [room]="roomInfo" #card></app-room-card> -->
+		</ul>
+		<i id="left" class="fa-solid fa-caret-left" (click)="scrollToOffset(scrub.vars['offset'] - spacing)"></i>
+		<i id="right" class="fa-solid fa-caret-right" (click)="scrollToOffset(scrub.vars['offset'] + spacing)"></i>
+	</div>
+</div>

@@ -1,0 +1,87 @@
+<div id="page">
+    <!-- 引导 -->
+    <div class="dialog" *ngIf="showIntro">
+        <h1 id="content">{{content}}</h1>
+        <button mat-icon-button class="sound-button" (click)="toggleSound()">
+            <i [class]="audio && audio.isPlaying?'fa-solid fa-volume-xmark':'fa-solid fa-volume-high'"></i>
+        </button>
+        <button mat-icon-button class="next-button" (click)="nextLine()" *ngIf="showNext">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+        <button mat-icon-button class="close-button" (click)="close()" *ngIf="showClose">
+            <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+    </div>
+    <div class="menu" *ngIf="showMenu">
+        <div *ngIf="checkPoint_id==undefined; else floatMode"><h1 class="hello">年轻人，你找我什么事？我的时间可是很宝贵的。</h1></div>
+        <ng-template #floatMode>
+            <h1 class="hello">年轻人，有点东西哦，离成功只有一步之遥。</h1>
+        </ng-template>
+
+        <button mat-button class="menu_btn" (click)="chat()">和我闲聊？</button><br>
+        <button mat-button class="menu_btn" (click)="tips()">查看提示？</button><br>
+        <button mat-button class="menu_btn" (click)="riddles()">进入答题？</button><br>
+        <button mat-button class="menu_btn" (click)="closeImmediately()">后会有期</button><br>
+    </div>
+
+    <div class="chat" *ngIf="showChat">
+        <button mat-icon-button class="back" (click)="back()">
+            <i class="back-icon" class="fa-solid fa-angle-left"></i>
+        </button>
+        <h1 id="A">{{content}}</h1>
+        <form class="input-form">
+            <mat-form-field>
+                <mat-label>你想说什么</mat-label>
+                <input class="answer" matInput [formControl]="answerFormControl" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="answerFormControl.hasError('required')">哟不聊天了吗</mat-error>
+            </mat-form-field>
+            <button mat-button type="submit" class="send" (click)="getResponse()" [disabled]="!answerFormControl.valid">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="tips" *ngIf="showTips">
+        <button mat-icon-button class="back" (click)="back()">
+            <i class="back-icon" class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <h1 id="T">{{content}}</h1>
+
+        <button mat-icon-button class="pre-btn" (click)="preLine()" *ngIf="showPre">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <button mat-icon-button class="next-btn" (click)="nextLine()" *ngIf="showNext">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+
+        <button mat-icon-button class="enterQuestion" (click)="riddles()">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+    </div>
+
+    <div class="Question" *ngIf="showQuestion">
+        <button mat-icon-button class="back" (click)="back()">
+            <i class="back-icon" class="fa-solid fa-angle-left"></i>
+        </button>
+        <h1 id="Q">{{content}}</h1>
+        <form class="input-form" *ngIf="showInput">
+            <mat-form-field>
+                <mat-label>谜底是？</mat-label>
+                <input class="answer" matInput [formControl]="answerFormControl" [errorStateMatcher]="matcher">
+                <input class="answer" matInput>
+                <!-- <mat-error *ngIf="answerFormControl.hasError('required')">哟不答题了吗</mat-error> -->
+            </mat-form-field>
+            <button mat-button type="submit" class="send" (click)="onSubmit()" [disabled]="!answerFormControl.valid">
+                <i class="fa-solid fa-circle-check"></i>
+            </button>
+
+        </form>
+        <button mat-icon-button class="enterTips" (click)="tips()">
+            <i class="fa-solid fa-circle-question"></i>
+        </button>
+    </div>
+
+    <app-npc-button *ngIf="npcModel!== undefined && !npcModel.visible" (click)="onClickNPCButton()"></app-npc-button>
+</div>

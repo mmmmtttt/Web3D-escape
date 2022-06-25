@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Cry ptography",
+        "intro": "Wanna cry about cryptography? Hey, calm down and Escape!",
+        "locked": false
+    },
+    {
+        "id": 2,
+        "name": "Confession",
+        "intro": "There is a deathly hush in the classroom. Escape!",
+        "locked": true
+    },
+    {
+        "id": 3,
+        "name": "Weird Hospital",
+        "intro": "Lured into the abandoned hospital, you find the strange noise approaching...Escape!",
+        "locked": true
+    },
+    {
+        "id": 4,
+        "name": "Snow White",
+        "intro": "You, a middle high schoolgirl, are trapped in a seemingly endless dream. Escape! ",
+        "locked": true
+    },
+    {
+        "id": 5,
+        "name": "Brain in a Jar",
+        "intro": "To be or not to be. Escape!",
+        "locked": true
+    },
+    {
+        "id": 6,
+        "name": "Furious Boss",
+        "intro": "You, as a green hand, have messed everything up. Your team leader is furious. Escape!",
+        "locked": true
+    },
+    {
+        "id": 7,
+        "name": "Three.js",
+        "intro": "Trapped in 3D world built by three.js. Escape!",
+        "locked": true
+    },
+    {
+        "id": 8,
+        "name": "Call of Cthulhu",
+        "intro": "Unseen horrors in plain sight and fear of the unknown. Escape!",
+        "locked": true
+    }
+]

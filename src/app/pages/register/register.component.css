@@ -1,0 +1,69 @@
+/*给注册表单那一列增加左右padding*/
+.padding {
+  padding-left: 5%;
+  padding-right: 10%;
+}
+
+.left-col {
+  position: relative;
+  /* 防止挡到标题 */
+  z-index: 0;
+}
+
+app-game-introduction{
+  position: absolute;
+  top: 17%;
+  left: 22%;
+}
+
+input{
+  color:gainsboro;
+}
+
+mat-icon{
+  color: gray;
+}
+
+.register-container {
+  width: 100%;
+}
+
+.mat-button-toggle {
+  background-color: transparent;
+  color: gray;
+}
+
+.mat-button-toggle-checked {
+  background-color: rgba(128, 128, 128, 0.5);
+  color: white;
+}
+
+form {
+  background-color: transparent;
+}
+
+#step1 {
+  padding-right: 20%;
+}
+
+.buttons{
+  margin-top: 5%;
+  color: gray;
+}
+
+.title{
+  color:#fff;
+  padding-left: 7%;
+}
+
+mat-stepper {
+  background-color: transparent!important
+}
+
+button[matStepperNext]:not([disabled]){
+  color: white;
+}
+
+a:hover{
+  color:#c31e5bc1
+}

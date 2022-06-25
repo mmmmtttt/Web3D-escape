@@ -1,0 +1,19 @@
+#tips{
+    margin-left: 8%;
+    position: relative;
+    color: gainsboro;
+    font-family: monospace;
+    width:max-content;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#tips img{
+    margin-bottom: 10px;
+}
+
+span{
+    padding-left: 5px;
+}

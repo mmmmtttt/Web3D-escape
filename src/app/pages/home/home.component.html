@@ -1,0 +1,29 @@
+<!-- <app-loading [showGuide]="false" *ngIf="loading"></app-loading> -->
+<section>
+  <img class="background" src="../../../assets/homepage/background.jpg" />
+  <h2>Escape</h2>
+  <img class="cliffLeft" src="../../../assets/homepage/cliff-left.png" />
+  <img class="cliffRight" src="../../../assets/homepage/cliff-right.png" />
+  <img class="man" src="../../../assets/homepage/man.png" />
+
+  <svg>
+    <g class="arrow">
+      <polygon fill="#fff" points="18,6.41 16.59,5 12,9.58 7.41,5 6,6.41 12,12.41" />
+      <polygon fill="#fff" points="18,13 16.59,11.59 12,16.17 7.41,11.59 6,13 12,19" />
+    </g>
+  </svg>
+</section>
+
+<!-- <div id="scrollDown">
+  <span>scroll</span>
+  <i class="fa-solid fa-angles-down"></i>
+</div> -->
+<div class="scroll-icon">
+	<span class="wheel"></span>
+</div>
+
+<div id="login-register">
+  <div class="panel">
+    <router-outlet (activate)='onActivate($event)'></router-outlet>
+  </div>
+</div>

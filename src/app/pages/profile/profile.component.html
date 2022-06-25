@@ -1,0 +1,127 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="./profile.component.css">    
+
+<body>
+  <div id="container">
+    <aside>
+      <div class="title">
+        <h1>User<span class="info">Info</span></h1>
+      </div>
+      
+      <div class="siderbar">
+        <!-- <div class="profile-photo"> -->
+          <img id="thumbnail" [src]="'../../../assets/player_thumbnail/thumbnail'+ ProfileDetail.portraitId + '.png'">
+        <!-- </div> -->
+
+        <div>
+          <mat-icon>fingerprint</mat-icon>
+          <h3>{{ProfileDetail.username}}</h3>
+        </div>
+
+        <div>
+          <mat-icon>face</mat-icon>
+          <h3>{{ProfileDetail.gender=='0'?'male':(ProfileDetail.gender=='1'?'female':'unknown')}}</h3>
+        </div>
+
+        <div>
+          <mat-icon>edit</mat-icon>
+          <h3>{{note}}</h3>
+        </div>
+
+        <div class="logout">
+          <button mat-stroked-button class="log-btn" (click)="logout()">Logout</button>
+        </div>
+
+        <div class="back">
+          <button mat-icon-button color="white" routerLink="../roomSelector" id="backButton">
+            <mat-icon>navigate_before</mat-icon>back 
+          </button>
+        </div>
+
+      </div>
+    </aside>
+    
+    <main>
+      <h1>Military Successes</h1>
+      
+      <div class="insights">
+        <div class="card" id="rate">
+          <div echarts [options]="victoryChart"></div>
+        </div>
+
+        <div class="card" id="atr">
+          <div echarts [options]="attributeChart"></div>
+        </div>  
+      </div>
+
+      <div class="historyRecord">
+        <h1>History Record</h1>
+        <div class="card" id="record">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>ROOM</th>
+                  <th>CHECKPOINT</th> 
+                  <th>TAG</th>
+                  <th>TRIAL</th>
+                  <th>RESULT</th>
+                </tr>  
+              </thead>
+              <tbody>
+                <tr *ngFor="let record of records;let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{record.roomId}}</td>
+                  <td>{{getName(record.checkpointId)}}</td>
+                  <td>{{record.tag}}</td>
+                  <td>{{record.trial}}</td>
+                  <td>{{record.result}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </main>
+
+    <div class="right">
+      <div class="something">
+        <h1>Badge Wall</h1>
+        <div class="card" id="wall">
+          <div id="badge">
+            <img src="../../../assets/badge/arrowed.png" width="60px"><br>
+            <div id="badge_name">一窍不通</div>
+          </div>
+          <div id="badge">
+            <img src="../../../assets/badge/aura.png" width="60px"><br>
+            <div id="badge_name">立地成佛</div>
+          </div>
+          <div id="badge">
+            <img src="../../../assets/badge/champions.png" width="60px"><br>
+            <div id="badge_name">双人成行</div>
+          </div>
+          <div id="badge">
+            <img src="../../../assets/badge/jump-across.png" width="60px"><br>
+            <div id="badge_name">小试牛刀</div>
+          </div>
+          <div id="badge">
+            <img src="../../../assets/badge/medal-skull.png" width="60px"><br>
+            <div id="badge_name">逃脱失败</div>
+          </div>
+          <div id="badge">
+            <img src="../../../assets/badge/medallist.png" width="60px"><br>
+            <div id="badge_name">个人逃脱</div>
+          </div>
+          <div id="badge">
+            <img src="../../../assets/badge/progression.png" width="60px"><br>
+            <div id="badge_name">稳步上升</div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+  </div>
+</body>
+
+
+

@@ -1,0 +1,80 @@
+/* 输入框 */
+
+h1{
+  font-family: 'Poppins';
+  color: #fff;
+}
+
+.title{
+  padding-left: 4%;
+}
+
+input{
+  color:gainsboro;
+}
+
+mat-icon{
+  color: gray;
+}
+
+.textbox{
+  width: 100%;
+  margin-top: 15px;
+}
+
+p{
+  display: flex;
+  justify-content: space-between;
+}
+
+a{
+  font-size: 14px;
+  color: gray;
+  flex-basis: 47%;
+  font-weight: 400;
+}
+
+button{
+  font-family: 'Poppins';
+  flex-basis: 47%;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+button[disabled]{
+  color: rgb(60, 59, 59);
+}
+
+button:not([disabled]){
+  transition: 0.4s;
+  color: lightgrey;
+  /* border: 1px solid #80393d; */
+  background-image: linear-gradient(to top, #c31e5b9e 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+}
+
+button:hover:not([disabled]) {
+  color: #FFF;
+  background-position: 0% 100%;
+}
+
+a:hover{
+  color: #c31e5bcc;
+}
+
+.bg{
+  width: 100%;
+}
+
+form{
+  padding-right: 10%;
+  padding-left: 10%;
+}

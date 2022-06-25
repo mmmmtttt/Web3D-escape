@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3" *ngFor="let thumbnailModel of thumbnailList">
+      <app-figure-card [data]="thumbnailModel" (selectedModel)="modelSelected=$event"></app-figure-card>
+    </div>
+  </div>
+</div>

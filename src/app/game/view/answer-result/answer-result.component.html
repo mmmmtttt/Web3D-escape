@@ -1,0 +1,19 @@
+<div id="container">≈
+    <canvas #c></canvas>
+    <div id="finalResult" *ngIf="showFinalResult">
+        <h1>🎉 <span id="winner">{{winner}}</span> led us to a new world! </h1>
+        <table>
+            <tr>
+                <th>solver</th>
+                <th>checkpoint</th>
+            </tr>
+            <tr *ngFor="let contribution of contributes">
+                <td>{{contribution.username}}</td>
+                <td>{{contribution.checkpoint}}</td>
+            </tr>
+        </table>
+        <button id="back" routerLink="../../roomSelector">🚀 Escape!</button>
+    </div>
+
+    <div id="solve" *ngIf="showCheckPointCracked">CRACKED!</div>
+</div>

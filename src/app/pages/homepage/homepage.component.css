@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+}
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    height: 100%;
+    position:absolute;
+    color: white;
+}
+
+.vertical-align{
+    padding-top: 40%;
+}
+
+button{
+    background: transparent;
+    border: none;
+}
+
+.pixel-font{
+    font-family: 'Press Start 2P',sans-serif;
+    color: white;
+    
+}
+
+.pixel-font:hover {
+    transform: scale(1.2); 
+    transition: all .3s;
+}
+

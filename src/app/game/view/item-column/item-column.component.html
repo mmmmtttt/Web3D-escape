@@ -1,0 +1,17 @@
+<div id="container">
+    <img src="../../../../assets/room_assets/locked-chest.png" width="22px" (click)="showItems()" id="img-btn" #icon>
+    <div id="panel">
+        <div id="content" *ngIf="show" >
+            <h1 id="title">物品栏</h1>
+            <div id="items">
+                <div id="item" *ngFor="let item of items">
+                <img [src]="'../../../../assets/room_assets/'+ item + 'ans.jpg'" width="70px" (click)="magnify(item)">
+                </div>
+            </div>
+        </div>
+        <div id="detail" *ngIf="detail">
+            <h1 id="title">详情</h1>
+            <img [src]="'../../../../assets/room_assets/'+ chosed + 'ans.jpg'" width="230px">
+        </div>
+    </div>
+</div>

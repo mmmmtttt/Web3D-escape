@@ -1,0 +1,128 @@
+:host app-scene {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+#progress {
+    position: absolute;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 100;
+    font-size: 30px;
+    font-weight: bold;
+    bottom: 5%;
+    right: 5%;
+}
+
+.inputKey span {
+    position: fixed;
+    z-index: 100;
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+app-item-column {
+    position: fixed;
+    top: 10px;
+    right: 80px;
+    z-index: 1000;
+}
+
+app-chat {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+app-verification-input {
+    position: fixed;
+    left: 44%;
+    top: 31%;
+    z-index: 1000;
+}
+
+.cursorfire {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔥</text></svg>") 16 0, auto;
+    /*!emojicursor.app*/
+}
+
+.cursorsoundon {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔈</text></svg>") 16 0, auto;
+    /*!emojicursor.app*/
+}
+
+.cursorsoundoff {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔇</text></svg>") 16 0, auto;
+    /*!emojicursor.app*/
+}
+
+#room {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+#resultCanvas {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: 1;
+}
+
+app-loading {
+    z-index: 100;
+}
+
+#labelPanel {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+}
+
+#backToFullView {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    color: white;
+    font-size: 20px;
+    z-index: 100;
+    background-color: rgba(00, 00, 00, 0.8);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToFullView:hover {
+    transform: scale(1.1);
+    transition: transform 100ms linear;
+}
+
+#npc {
+    position: fixed;
+    z-index: 101;
+}
+
+#collision {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    color: rgba(256, 256, 256, 0.8);
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+    font-size: 16x;
+    z-index: 100;
+}

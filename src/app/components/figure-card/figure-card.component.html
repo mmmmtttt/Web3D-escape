@@ -1,0 +1,4 @@
+<!-- 用radio来控制只选一个 -->
+<input type="radio" name="card" #radio>
+<img mat-card-image src="{{data.imageUrl}}" class="mat-elevation-z5 card" class="{{radio.checked? 'checked':''}}"
+    (click)="toggleChecked()">

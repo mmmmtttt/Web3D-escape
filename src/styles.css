@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+
+
+.text-center{
+    text-align: center;
+}
+
+html, body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+    /* firefox中隐藏滚动条 */
+    scrollbar-width: none;
+    /* 禁止选中文字 */
+    user-select: none;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.half-width{
+    width: 50%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

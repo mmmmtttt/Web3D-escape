@@ -1,0 +1,13 @@
+<div>
+    <button mat-icon-button id="help"><i [class]="showGuide?'fa-solid fa-circle-xmark':'fa-solid fa-circle-info'"
+            (click)="showGuide=!showGuide"></i></button>
+    <!-- <button mat-icon-button id="exit" title="您确定要通过这种物理手段逃出密室？"><i class='fa fa-arrow-circle-left'></i></button> -->
+    <button mat-icon-button id="exit" title="您确定要通过这种物理手段逃出密室？" routerLink="../../roomSelector"><i
+            class="fa-solid fa-person-walking-dashed-line-arrow-right"></i></button>
+
+    <app-mouse-guide *ngIf="showGuide"></app-mouse-guide>
+
+    <!-- <app-chat [roomId]="roomId"></app-chat> -->
+    <app-game-scene [roomId]="roomId"></app-game-scene>
+    <!-- <app-loading class="loading"  [showLoading]="true"></app-loading> -->
+</div>

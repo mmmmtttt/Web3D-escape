@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap");
+/* .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    visibility: hidden;
+} */
+
+.container{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    /* --primaryGradient: linear-gradient(93.12deg, #22524e 0.52%, #445c48 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #364734 -2.14%, #1f4646 99.69%); */
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --light: 300;
+    --regular: 400;
+    --semiBold: 600;
+    --extraLight: 300;
+    --italic: 300;
+    --primary: linear-gradient(93.12deg, #22524e 0.52%, #445c48 100%);
+}
+
+/* CHATBOX
+=============== */
+.chatbox {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+/* CONTENT ISOPEN */
+.chatbox__all{
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    
+    /* background: rgba(255, 255, 255, .2);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px); */
+    background: transparent;
+
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    opacity: 1;
+    /* transform: translateY(-40px);
+    z-index: 123456;
+    opacity: 1; */
+}
+
+/* CONTENT IS CLOSE */
+/* .chatbox__all.hide {
+    z-index: -123456;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+} */
+
+/* BUTTON */
+/* .chatbox__button {
+    text-align: right;
+} */
+
+/* .chatbox__button button,
+.chatbox__button button:focus,
+.chatbox__button button:visited {
+    padding: 10px;
+    background: white;
+    border: none;
+    outline: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+} */
+
+/* HEADER */
+/* .chatbox__header {
+    position: sticky;
+    top: 0;
+    background: var(--primaryGradient);
+    background: rgba(200, 200, 200, .3);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+    display: flex;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);
+} */
+
+/* .chatbox__image--header {
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+} */
+
+i{
+    color: white;
+    font-size: 20px;
+}
+
+/* .chatbox__button i{
+    color: black;
+} */
+
+h5{
+    margin-top: 0.2rem;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+h6{
+    font-size: 10px;
+    margin-top: 0;
+    opacity: 0.8;
+}
+
+.chatbox__content--header {
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* MESSAGES */
+.chatbox__messages {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.messages__item{
+    width: fit-content;
+    margin-top: 10px;
+    /* padding: 8px 12px; */
+}
+
+/* 我的对话框 */
+.messages__item{
+/* 左对齐 */
+    margin-right: auto;
+}
+
+.messages__item.mine .message,
+.messages__item.others .message{
+    color:white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: var(--primary);
+    padding: 8px 12px;
+}
+
+.messages__item.mine .name,
+.messages__item.others .name{
+    text-align: left;
+    color: white;
+}
+
+/* 对方的对话框 */
+/* .messages__item.others {
+    margin-right: auto;
+} */
+
+.messages__item.others .message{
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 8px 12px; */
+    background: rgba(255, 255, 255, .7);
+	/* -webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px); */
+}
+
+/* 离开加入的提示 */
+.messages__item.disconnect,.messages__item.connect{
+    width: 100%;
+}
+
+.messages__item.disconnect .message,
+.messages__item.connect .message
+{
+    color: gray;
+    text-align: center;
+}
+
+.messages__item.disconnect .name,
+.messages__item.connect .name
+{
+    display: none;
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+/* .messages__item:not(.mine) .name{
+    text-align: left;
+} */
+
+/* FOOTER */
+.chatbox__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px;
+    /* background: var(--secondaryGradient);
+    box-shadow: var(--secondaryBoxShadow); */
+    background: rgba(100, 100, 100, .3);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: sticky;
+    bottom: 0;
+}
+
+.chatbox__footer:hover{
+    transform: scale(1.05);
+    transition: transform 300ms linear;
+}
+
+.chatbox__footer input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color:white;
+}
+
+.chatbox__footer button {
+    border: none;
+    background-color: transparent;
+}

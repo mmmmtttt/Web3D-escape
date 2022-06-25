@@ -1,0 +1,23 @@
+<!-- <app-loading class="loading" *ngIf="loading" [showGuide]="true"></app-loading> -->
+<p *ngIf="loading" id="progress"> {{loadProgress | number:'1.2-2'}} % </p>
+<div id="labelPanel" #labelPanel></div>
+<!-- 进入放大物体检查模式时，左上角出现退出按钮 -->
+<div id="backToFullView" *ngIf="inCheckMode || inFloatMode" (click)="backToFullView()">
+   <i class="fa-solid fa-right-from-bracket"></i>
+</div>
+<app-item-column [items]="itemCheckpoints" #collection></app-item-column>
+<div id="collision" *ngIf="collisionOccur">
+   <i class="fa-solid fa-person-falling-burst"> {{collisionPrompt}}</i>
+</div>
+<p class="inputKey" [hidden]="!inCheckMode">
+   <span #key0></span>
+   <span #key1></span>
+   <span #key2></span>
+   <span #key3></span>
+   <span #key4></span>
+</p>
+<app-game-npc id="npc" *ngIf="showNpc" (npcFinish)="npcFinishInstruction()" [checkPoint_id]="npcCheckpointId"
+   [solved]="getSolved()" [world]="world"></app-game-npc>
+<app-chat [roomId]="roomId" *ngIf="!loading && npcInstructFinish"></app-chat>
+<app-answer-result></app-answer-result>
+<canvas #room id="room"></canvas>

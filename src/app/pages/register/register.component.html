@@ -1,0 +1,120 @@
+<div class="container-fluid overflow-hidden vh-100  d-flex flex-column register-container">
+    <div class="row">
+        <div class="col-6 offset-md-6 title">
+            <h1>Join us</h1>
+        </div>
+    </div>
+    <div class="row flex-fill">
+        <!-- 虚拟人物展示在左列 -->
+        <div class="col-6 left-col">
+            <div *ngFor="let _ of [].constructor(modelNum);let i = index">
+                <app-figure-show [modelPath]="'../../../assets/player_3d_model/model'+i+'.glb'" [showModel]="chooseFigure"
+                    *ngIf="i==$any(formArray?.get([1])).get('figureFormCtrl').value"></app-figure-show>
+            </div>
+            <app-game-introduction *ngIf="!chooseFigure"></app-game-introduction>
+        </div>
+
+    <!-- 右侧的注册表单 -->
+    <div class="col-6 padding vertical-align">
+        <!-- stepper，实现多步注册 -->
+        <form [formGroup]="formGroup">
+            <mat-stepper formArrayName="formArray" linear>
+                <mat-step formGroupName="0" [stepControl]="$any(formArray?.get([0]))">
+                    <div id="step1">
+                        <ng-template matStepLabel>Info</ng-template>
+
+                        <!-- username -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter username</mat-label>
+                            <input matInput placeholder="Enter here"
+                                [formControl]="$any(formArray?.get([0])).get('usernameFormCtrl')"
+                                [errorStateMatcher]="matcher">
+                            <mat-error *ngIf="$any(formArray?.get([0])).get('usernameFormCtrl').hasError('required')">
+                                Username is required</mat-error>
+                        </mat-form-field>
+                        <!-- Force next columns to break to new line -->
+                        <div class="w-100"></div>
+                        <!-- password -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Enter password</mat-label>
+                            <input matInput [type]="hidePwd ? 'password' : 'text'"
+                                [formControl]="$any(formArray?.get([0])).get('passwordFormCtrl')"
+                                [errorStateMatcher]="matcher">
+                            <a mat-icon-button matSuffix (click)="hidePwd = !hidePwd"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePwd">
+                                <mat-icon>{{hidePwd ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </a>
+                            <mat-error *ngIf="$any(formArray?.get([0])).get('passwordFormCtrl').errors?.['required']">
+                                Password is required</mat-error>
+                            <mat-error *ngIf="$any(formArray?.get([0])).get('passwordFormCtrl').errors?.['pattern']">
+                                length>=8,1+ uppercase,1+ lowercase,1+ numbers. </mat-error>
+                        </mat-form-field>
+                        <!-- confirm password -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Confirm the password</mat-label>
+                            <input matInput [type]="hideConfirmPwd ? 'password' : 'text'"
+                                [formControl]="$any(formArray?.get([0])).get('confirmPwdFormCtrl')"
+                                [errorStateMatcher]="matcher">
+                            <a mat-icon-button matSuffix (click)="hideConfirmPwd = !hideConfirmPwd"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPwd">
+                                <mat-icon>{{hideConfirmPwd ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </a>
+                            <mat-error *ngIf="($any(formArray?.get([0])).get('confirmPwdFormCtrl').getError('match'))">
+                                Passwords do not match </mat-error>
+                        </mat-form-field>
+                        <!-- gender -->
+                        <mat-button-toggle-group name="gender" aria-label="gender" formControlName="genderFormCtrl"
+                            class="full-width">
+                            <mat-button-toggle value="0" class="full-width">
+                                <i class="fa-solid fa-child"></i>
+                            </mat-button-toggle>
+                            <mat-button-toggle value="1" class="full-width">
+                                <i class="fa-solid fa-child-dress"></i>
+                            </mat-button-toggle>
+                            <mat-button-toggle value="2" class="full-width">
+                                <i class="fa-solid fa-question"></i>
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                        <div class="w-100"></div>
+                        <div class="full-width buttons">
+                            <a mat-button class="button half-width" routerLink="../login">Back to login</a>
+                            <button mat-button matStepperNext type="button" (click)="chooseFigure=true"
+                                [disabled]="!$any(formArray?.get([0])).valid" class="half-width">Next</button>
+                        </div>
+                    </div>
+                </mat-step>
+
+                <!-- 第二步，选择虚拟形象 -->
+                <mat-step formGroupName="1" [stepControl]="$any(formArray?.get([1]))">
+                    <ng-template matStepLabel>Figure</ng-template>
+                    <div>
+                        <app-figure-selector [formControl]="$any(formArray?.get([1])).get('figureFormCtrl')">
+                        </app-figure-selector>
+
+                        <div class="full-width buttons">
+                            <a mat-button class="button half-width" routerLink="../login">Back to login</a>
+                            <button mat-button matStepperNext type="button"
+                                [disabled]="!$any(formArray?.get([1])).valid" class="half-width">Next</button>
+                        </div>
+                    </div>
+                </mat-step>
+
+                <!-- 第三步，完成 -->
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <div>
+                        <div class="full-width buttons">
+                            <a mat-button class="button half-width" routerLink="../login">Back to login</a>
+                            <button mat-button matStepperNext type="button"
+                                [disabled]="!$any(formArray?.get([1])).valid || !$any(formArray?.get([0])).valid"
+                                class="half-width" (click)="onSubmit()"> Done</button>
+                        </div>
+                    </div>
+                </mat-step>
+
+
+            </mat-stepper>
+        </form>
+    </div>
+</div>
+</div>

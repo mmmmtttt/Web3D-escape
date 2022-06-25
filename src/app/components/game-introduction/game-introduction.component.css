@@ -1,0 +1,59 @@
+:root {
+    --typewriterSpeed: 8s;
+    --typewriterCharacters: 6;
+}
+
+
+h2 {
+    font-size: 13;
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: max-content;
+    color: rgba(256, 256, 256, 0.8);
+}
+
+.intro-content{
+    font-family: "Source Code Pro", monospace;
+    color: rgba(256, 256, 256, 0.8);
+}
+
+h2::before,
+h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h2::before {
+    background: black;
+    animation: typewriter steps(8) 8s forwards;
+}
+
+h2::after {
+    width: 0.125em;
+    background: rgb(100, 100, 100);
+    animation: typewriter steps(8) 8s forwards, blink 750ms steps(8) infinite;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

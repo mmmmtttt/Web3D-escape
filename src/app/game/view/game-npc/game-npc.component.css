@@ -1,0 +1,227 @@
+app-npc-button {
+    position: fixed;
+    bottom: 150px;
+    right: 70px;
+}
+
+app-npc-button:hover {
+    transform: scale(1.05) translateX(-5px);
+    transition: transform 300ms linear;
+}
+
+.dialog {
+    width: 100%;
+    height: 15rem;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(100, 100, 100, .3);
+}
+
+#content {
+    margin-top: 90px;
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 55px;
+    line-height:30px;
+    font-family: monospace;
+    font-size: large;
+    color: rgba(256, 256, 256, 0.9);
+}
+
+#Q {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: monospace;
+    font-size: large;
+    color: rgba(256, 256, 256, 0.9);
+}
+
+#T {
+    /* margin-top: 30px; */
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: monospace;
+    font-size: large;
+    color: rgba(256, 256, 256, 0.9);
+}
+
+#A {
+    /* margin-top: 30px; */
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: monospace;
+    font-size: large;
+    color: rgba(256, 256, 256, 0.9);
+}
+
+.hello {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: monospace;
+    font-size: large;
+    color: rgba(256, 256, 256, 0.9);
+}
+
+.mat-button .mat-button-focus-overlay {
+    background-color: transparent;
+}
+
+.close-button {
+    color: white;
+}
+
+i {
+    color: white;
+}
+
+.next-button {
+    color: white;
+}
+
+.sound-button {
+    margin-left: 75%;
+    color: white;
+    display: inline-block;
+}
+
+.back-icon {
+    margin-left: 10%;
+}
+
+button {
+    font-size: 20px;
+}
+
+.menu_btn {
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: null;
+    font-family: monospace;
+    font-size: large;
+    color: rgba(256, 256, 256, 0.9);
+}
+
+.menu_btn:hover {
+    background-color: transparent;
+    color: white;
+    text-shadow: 0 0 10px brown, 0 0 20px brown, 0 0 30px brown, 0 0 40px brown;
+}
+
+.menu {
+    border-radius: 10px;
+    margin-left: 73%;
+    width: 18%;
+    margin-right: 2%;
+    height: max-content;
+    position: fixed;
+    bottom: 40%;
+    left: 0px;
+    background-color: rgba(100, 100, 100, .3);
+}
+
+.tips {
+    border-radius: 10px;
+    margin-left: 73%;
+    width: 18%;
+    height: max-content;
+    position: fixed;
+    bottom: 40%;
+    left: 0px;
+    background-color: rgba(100, 100, 100, .3);
+}
+
+.enterQuestion {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 80%;
+    background-color: null;
+    border: null;
+}
+
+.enterQuestion:hover {
+    color: brown;
+}
+
+.Question {
+    border-radius: 10px;
+    margin-left: 73%;
+    width: 18%;
+    height: max-content;
+    position: fixed;
+    bottom: 35%;
+    left: 0px;
+    background-color: rgba(100, 100, 100, .3);
+}
+
+.enterTips {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 80%;
+}
+
+.enterTips:hover {
+    color: brown;
+}
+
+.send {
+    color: white;
+}
+
+.send:hover {
+    color: cadetblue;
+}
+
+.input-form {
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* height: 100px; */
+}
+
+mat-form-field {
+    width: 70%;
+}
+
+/* 输入框 */
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgba(255,255,255,0.5) !important;
+}
+
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgba(255,255,255,0.5) !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: rgba(255,255,255,0.5) !important;
+}
+
+input{
+    color:white;
+  }
+
+.answer {
+    background-color: null;
+    width: fit-content;
+}
+
+.chat {
+    border-radius: 10px;
+    margin-left: 73%;
+    width: 18%;
+    height: max-content;
+    position: fixed;
+    bottom: 40%;
+    left: 0px;
+    background-color: rgba(100, 100, 100, .3);
+}
